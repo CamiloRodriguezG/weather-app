@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;600;700&display=swap");
+
+:root {
+  --pri-bg: #100e1d;
+  --sec-bg: #1e213a;
+  --color-text-one: #e7e7eb;
+  --color-text-two: #a09fb1;
+  --color-text-three: #88869d;
+  --bg-btns: #6e707a;
+  --blue: #3C47E9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+/* loader */
+
+.loader1, .loader2{
+  border-radius: 5px;
+  margin-top: 100px;
+  min-height: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  max-width: 80px;
+  animation: spin 2s linear infinite;
+}
+.loader1{
+  border: 10px solid var(--pri-bg);
+}
+.loader2{
+  position: relative;
+  left: 50%;
+  border: 10px solid var(--sec-bg);
+}
+ 
+.fill{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-text-one);
+  animation: auto-fill 2s ease infinite;
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(180deg);
+  }
+  40%{
+    transform: rotate(360deg);
+  }
+  50%{
+    transform: rotate(360deg);
+  }
+  75%{
+    transform: rotate(180deg)
+  }
+  90%{
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes auto-fill{
+  0%{
+    height: 100%;
+  }
+  40%{
+    height: 0%;
+  }
+  50%{
+    height: 0%;
+  }
+  90%{
+    height: 100%;
+  }
+}
+
+/* loader end */
+
+body {
+  display: flex;
+  background: var(--pri-bg);
+}
+
+.search-place{
+  padding: 20px 15px;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  position: absolute;
+  background: var(--sec-bg);
+  transition: all .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.close-search{
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  left: calc(100% - 15px);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: var(--color-text-one);
+}
+
+.search-field{
+  display: flex;
+  gap: 6px;
+}
+
+.search-field button{
+  cursor: pointer;
+  width: 25%;
+  border: none;
+  font-size: 13px;
+  text-align: center;
+  color: var(--color-text-one);
+  background: var(--blue);
+  outline: none;
+}
+
+.search-input{
+  width: 75%;
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--color-text-one);
+}
+
+.search-input i{
+  color: var(--bg-btns);
+}
+
+.search-input input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  color: var(--bg-btns);
+}
+
+.pre-places{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pre-places button{
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-one);
+}
+
+.pre-places button i{
+  color: transparent;
+}
+
+.pre-places button:hover i{
+  color: var(--bg-btns);
+}
+.pre-places button:hover{
+  border: 1px solid var(--bg-btns);
+}
+
+.left-sec {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  position: relative;
+  width: 30%;
+  background: var(--sec-bg);
+}
+
+.left-imgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.left-imgs img:nth-child(1) {
+  transform: scale(0.5);
+}
+
+.left-imgs img:nth-child(2) {
+  transform: scale(0.6);
+  position: absolute;
+  opacity: 0.3;
+}
+
+.left-btns {
+  padding: 42px 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-place-btn {
+  font-weight: 500;
+  color: var(--color-text-one);
+  cursor: pointer;
+  padding: 5px 13px;
+  background: var(--bg-btns);
+  border: none;
+  outline: none;
+}
+
+.gps-btn {
+  cursor: pointer;
+  background: var(--color-text-one);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.gps-btn i {
+  border-radius: 50%;
+  height: 100%;
+  color: var(--bg-btns);
+  font-size: 25px;
+}
+
+.left-info {
+  height: 100%;
+  position: relative;
+  padding: 0 0 42px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+}
+
+.left-info h2 {
+  font-size: 90px;
+  font-weight: 500;
+  color: var(--color-text-one);
+}
+.left-info h2 span {
+  font-weight: 100;
+  font-size: 35px;
+}
+
+.left-time {
+  color: var(--color-text-two);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.down-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-three);
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 42px 120px;
+}
+
+.not-found{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-one);
+  text-align: center;
+  font-size: 50px;
+}
+
+.error-image{
+  width: 170%;
+}
+
+.temp-btns {
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grade-btn {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.grade-btn p {
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px 10px;
+  background: var(--bg-btns);
+  color: var(--color-text-one);
+}
+
+.active-grade-btn p {
+  background: var(--color-text-one);
+  color: var(--bg-btns);
+}
+
+.week-temp {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+  max-width: 100%;
+}
+
+.week-day-card {
+  background: var(--sec-bg);
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.week-day-card img {
+  margin: 7px 0 15px 0;
+  height: 60px;
+}
+
+.day-temps {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.week-day-card p,
+.day-temps p:first-child {
+  color: var(--color-text-one);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.day-temps p:last-child {
+  color: var(--color-text-two);
+}
+
+.todays-temp h3 {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text-one);
+}
+
+.todays-temp-cards {
+  margin-top: 15px;
+  margin-bottom: -60px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.todays-temps-card {
+  color: var(--color-text-one);
+  text-align: center;
+  padding: 16px 0 0;
+  background: var(--sec-bg);
+  width: 100%;
+  height: auto;
+}
+
+.ttc-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ttc-number {
+  margin: 7px 0;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.ttc-number span {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.todays-card-air-dir {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+
+.ttc-tl{
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ttc-tr{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 40px;
+}
+
+.humidity-graph{
+  margin: 10px 0 16px;
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  height: 8px;
+  background: var(--color-text-one);
+}
+
+#graph-fill{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  background: #FFEC65;
+  border-radius: 5px;
+}
+
+.graph-span{
+  position: absolute;
+  color: var(--color-text-two);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.gs-tl{
+  top: -15px;
+  left: 0;
+}
+
+.gs-c{
+  top: -15px;
+}
+
+.gs-tr{
+  top: -18px;
+  right: 0;
+}
+
+.gs-br{
+  bottom: -14px;
+  right: 0;
+}
+
+
+footer {
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  transform: translateX(-120px);
+  text-align: center;
+  color: var(--color-text-three);
+}
+
+footer a {
+  color: var(--color-text-two);
+  font-weight: 700;
+}
+
+
+@media (max-width:600px) {
+  body{
+    flex-direction: column;
+  }
+
+  /* top part */
+  .left-sec{
+    min-height: 100vh;
+    width: 100vw;
+    justify-content: start;
+  }
+  .left-btns{
+    padding: 12px 10px;
+  }
+  .search-place-btn{
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+  .gps-btn i{
+    font-size: 35px;
+  }
+  .left-imgs{
+    margin: 40px 0;
+  }
+  .left-imgs img:nth-child(1){
+    transform: scale(.7);
+  }
+  .left-imgs img:nth-child(2){
+    transform: scale(.8);
+  }
+  .left-info h2{
+    font-size: 120px;
+  }
+  .left-time{
+    font-size: 30px;
+    margin: 20px 0 50px 0;
+  }
+  .down-left{
+    font-size: 15px;
+    gap: 25px;
+  }
+  .error-image{
+    width: 100%;
+  }
+
+  /* search place */
+  .search-place{
+    padding: 15px;
+  }
+  .search-input{
+    padding: 15px 10px;
+  }
+
+  .search-input input, .search-field button, .pre-places button{
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* content */
+
+  .temp-btns{
+    display: none;
+  }
+
+  .content{
+    padding: 50px;
+  }
+  .week-temp{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .todays-temp-cards{
+    grid-template-columns: 1fr;
+  }
+  .todays-temps-card{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ttc-tl, .ttc-tr{
+    height: 150px;
+  }
+  .ttc-bl, .ttc-br{
+    height: 100px;
+  }
+
+  /* footer */
+
+  footer{
+    left: 0;
+    text-align: center;
+    transform: translateX(0);
+  }
+}

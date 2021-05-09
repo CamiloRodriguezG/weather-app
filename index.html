@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="./Clear.png" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Weather app</title>
+</head>
+<body>
+  <div class="left-sec">
+    <div class="search-place">
+      <button class="close-search">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="search-field">
+        <div class="search-input">
+          <i class="fas fa-search"></i>
+          <input id="woeid-input" type="number" placeholder="search by woeid">
+        </div>
+        <button onclick="searchByWoeid()">Search</button>
+      </div>
+      <div class="pre-places">
+        <button onclick="changePlace(368148)">
+          <p>Bogota</p>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <button onclick="changePlace(44418)">
+          <p>London</p>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <button onclick="changePlace(2459115)">
+          <p>New York</p>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <button onclick="changePlace(676757)">
+          <p>Munich</p>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="left-btns">
+      <button class="search-place-btn">
+        Seach for places
+      </button>
+      <button class="gps-btn" title="Enable location">
+        <i class="fas fa-compass"></i>
+      </button>
+    </div>
+    <div class="left-imgs">
+    </div>
+    <div class="left-info">
+    </div>
+  </div>
+  <div class="content">
+    <div class="temp-btns">
+      <button id="celsius-btn" class="grade-btn active-grade-btn">
+        <p>℃</p>
+      </button>
+      <button id="far-btn" class="grade-btn ">
+        <p>℉</p>
+      </button>
+    </div>
+    <div class="week-temp">
+    </div>
+    <div class="todays-temp">
+      <h3>Today’s Hightlights</h3>
+    </div>
+    <footer>
+      created by <a href="#">Camilo Rodriguez</a> - devChallenges.io
+    </footer>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
