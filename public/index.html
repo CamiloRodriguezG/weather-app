@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="./img/Clear.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weather app</title>
+  </head>
+  <body>
+    <div class="left-sec">
+      <div class="search-place">
+        <button class="close-search">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="search-field">
+          <div class="search-input">
+            <i class="fas fa-search"></i>
+            <input id="woeid-input" type="text" placeholder="search by city name" />
+          </div>
+          <button onclick="searchByWoeid()">Search</button>
+        </div>
+        <div class="pre-places">
+          <button onclick="changePlace(4.6534649, -74.0836453)">
+            <p>Bogotá</p>
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <button onclick="changePlace(51.5073219, -0.1276474)">
+            <p>London</p>
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <button onclick="changePlace(40.7127281, -74.0060152)">
+            <p>New York</p>
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <button onclick="changePlace(48.1371079, 11.5753822)">
+            <p>Munich</p>
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="left-btns">
+        <button class="search-place-btn">Seach for places</button>
+        <button class="gps-btn" title="Enable location" onclick="reloadByLocation()">
+          <i class="fas fa-compass"></i>
+        </button>
+      </div>
+      <div class="left-imgs"></div>
+      <div class="left-info"></div>
+    </div>
+    <div class="content">
+      <div class="temp-btns">
+        <button
+          id="celsius-btn"
+          class="grade-btn active-grade-btn"
+          onclick="toggleUnits('celsius')"
+        >
+          <p>℃</p>
+        </button>
+        <button id="far-btn" class="grade-btn" onclick="toggleUnits('far')">
+          <p>℉</p>
+        </button>
+      </div>
+      <div class="week-temp"></div>
+      <div class="todays-temp">
+        <h3>Today’s Hightlights</h3>
+      </div>
+      <footer>
+        created by <a href="https://portfolio-mu-snowy.vercel.app/">Camilo Rodriguez</a> -
+        devChallenges.io
+      </footer>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

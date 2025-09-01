@@ -32,7 +32,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/CamiloRodriguezG/weather-app/blob/main/screenshoot.png)
+![screenshot](https://github.com/CamiloRodriguezG/weather-app/blob/main/public/img/assets/screenshoot.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
